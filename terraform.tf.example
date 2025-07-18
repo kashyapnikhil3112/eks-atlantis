@@ -1,0 +1,24 @@
+#You can use this as it is as template for deployment of this project supplying your own values.
+# Basic Configuration
+cluster_name = "eks-atlantis-cluster"
+region = "eu-north-1"
+
+# GitHub Configuration
+github_username = "GITHUBUSERNAME"
+github_token = "ghp_lX**********************z"
+github_repo = "GITHUBUSERNAME/eks-atlantis"
+
+# Atlantis Configuration
+atlantis_version = "4.21.0"
+atlantis_image_tag = "v0.26.0"
+
+# Node Configuration
+node_instance_type = "t3.medium"
+node_min_size = 1
+node_max_size = 2
+node_desired_size = 1
+
+# Storage Configuration
+# Set to false for testing (EmptyDir), true for production (Persistent Volume)
+use_persistent_storage = true
+storage_size = "50Gi"
