@@ -19,7 +19,6 @@ I have used Windows Powershell for the setup.
 - [GitHub & Atlantis Integration](#github--atlantis-integration)
 - [Usage Workflow](#usage-workflow)
 - [Troubleshooting & Maintenance](#troubleshooting--maintenance)
-- [FAQ](#faq)
 - [References](#references)
 
 ---
