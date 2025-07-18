@@ -3,7 +3,7 @@ orgAllowlist: ${github_repo_allowlist}
 github:
   user: ${github_username}
   token: ${github_token}
-  secret: "${webhook_secret}"  # ✅ Added quotes to handle special characters
+  secret: "${webhook_secret}"  #  Added quotes to handle special characters
 
 service:
   type: LoadBalancer
