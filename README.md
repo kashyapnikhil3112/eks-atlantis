@@ -107,29 +107,29 @@ Get-ChildItem Env: | Where-Object { $_.Name -like "*GITHUB*" -or $_.Name -like "
    - Copy `terraform.tfvars.example` to `terraform.tfvars` (or edit directly)
    - Fill in your AWS region, GitHub username, token, and repo
    
-*****Example for terraform.tfvars that can be used is as below
+Example for terraform.tfvars that can be used is as below
 
-*** Basic Configuration
+Basic Configuration
 cluster_name = "eks-atlantis-cluster"
 region = "eu-north-1"
 
-**** GitHub Configuration
+GitHub Configuration
 github_username = "abc"
 github_token = "ghp_abcd"
 github_repo = "abc/eks-atlantis"
 
-***** Atlantis Configuration
+Atlantis Configuration
 atlantis_version = "4.21.0"
 atlantis_image_tag = "v0.26.0"
 
-***** Node Configuration
+Node Configuration
 node_instance_type = "t3.medium"
 node_min_size = 1
 node_max_size = 2
 node_desired_size = 1
 
-***** Storage Configuration
-***** Set to false for testing (EmptyDir), true for production (Persistent Volume)
+Storage Configuration
+Set to false for testing (EmptyDir), true for production (Persistent Volume)
 use_persistent_storage = true
 storage_size = "50Gi"
 
