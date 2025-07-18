@@ -64,25 +64,25 @@ I have used Windows Powershell for the setup.
 - AWS account with sufficient permissions. Create a dedicated IAM user , for testing assign Admin Access previliges
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-# Initialize configuration
+**** Initialize configuration****
 aws configure
 
-# Or set individual values
+**** Or set individual values
 aws configure set aws_access_key_id YOUR_ACCESS_KEY
 aws configure set aws_secret_access_key YOUR_SECRET_KEY
 aws configure set default.region us-west-2
 aws configure set default.output json
 
-# Display all configuration
+*** Display all configuration
 aws configure list
 
-# Check persistent environment variables stored at user level
+**** Check persistent environment variables stored at user level
 echo "GitHub Token: $([Environment]::GetEnvironmentVariable('GITHUB_TOKEN', 'User').Substring(0,10))..."
 echo "GitHub Username: $([Environment]::GetEnvironmentVariable('GITHUB_USERNAME', 'User'))"
 echo "GitHub Repo: $([Environment]::GetEnvironmentVariable('GITHUB_REPO', 'User'))"
 echo "AWS Region: $([Environment]::GetEnvironmentVariable('AWS_REGION', 'User'))"
 
-# Get all GitHub and AWS related environment variables
+**** Get all GitHub and AWS related environment variables
 Get-ChildItem Env: | Where-Object { $_.Name -like "*GITHUB*" -or $_.Name -like "*AWS*" } | Format-Table Name, Value -AutoSize
 
 
@@ -107,29 +107,29 @@ Get-ChildItem Env: | Where-Object { $_.Name -like "*GITHUB*" -or $_.Name -like "
    - Copy `terraform.tfvars.example` to `terraform.tfvars` (or edit directly)
    - Fill in your AWS region, GitHub username, token, and repo
    
-Example for terraform.tfvars that can be used is as below
+*****Example for terraform.tfvars that can be used is as below
 
-# Basic Configuration
+*** Basic Configuration
 cluster_name = "eks-atlantis-cluster"
 region = "eu-north-1"
 
-# GitHub Configuration
+**** GitHub Configuration
 github_username = "abc"
 github_token = "ghp_abcd"
-github_repo = "kashyapnikhil3112/eks-atlantis"
+github_repo = "abc/eks-atlantis"
 
-# Atlantis Configuration
+***** Atlantis Configuration
 atlantis_version = "4.21.0"
 atlantis_image_tag = "v0.26.0"
 
-# Node Configuration
+***** Node Configuration
 node_instance_type = "t3.medium"
 node_min_size = 1
 node_max_size = 2
 node_desired_size = 1
 
-# Storage Configuration
-# Set to false for testing (EmptyDir), true for production (Persistent Volume)
+***** Storage Configuration
+***** Set to false for testing (EmptyDir), true for production (Persistent Volume)
 use_persistent_storage = true
 storage_size = "50Gi"
 
